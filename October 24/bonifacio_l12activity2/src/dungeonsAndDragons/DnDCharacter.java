@@ -1,6 +1,6 @@
 package dungeonsAndDragons;
 
-public abstract class DnDCharacter {
+public abstract class DnDCharacter implements Abilities{
 	public String characterName;
 	public String attackPattern;
 	public int health;
@@ -48,9 +48,19 @@ public abstract class DnDCharacter {
 
     public abstract void receiveDamage(int damage);
     
-    public abstract void restoreHealth(int restore);
+    @Override
+    public void restoreHealth(int restore) {
+    	this.health += restore;
+		// cannot heal if already defeated
+		if(this.health < 0) {
+			this.health = 0;
+		}
+    }
     
-    public abstract void buffAbility(int buff);
+    @Override 
+    public void buffAbility(int buff) {
+    	this.damage += buff;
+    }
 
     public String toString(String weapon) {
         return weapon + "'s profile: " + "\nCharacter Name: " + characterName + "   Health: " + health + "   Damage: " + damage;

@@ -5,6 +5,7 @@ import java.util.Random;
 public class DnDGame {
 	public static void main(String[] args) {
 		DnDCharacter swordsman = new Swordsman("Furina");
+		DnDCharacter claymore = new Claymore("Diluc");
 		DnDCharacter catalyst = new Catalyst("Kokomi");
 		DnDCharacter archer = new Archer("Yelan");
 		DnDCharacter polearm = new Polearm("Hu Tao");
@@ -19,7 +20,7 @@ public class DnDGame {
 		System.out.println("---------------BATTLE START---------------");
 		System.out.println();
 		
-		battleCharacters(archer, swordsman);
+		battleCharacters(claymore, catalyst);
 	}
 	
 	public static void battleCharacters(DnDCharacter char1, DnDCharacter char2) {
@@ -60,7 +61,7 @@ public class DnDGame {
 					char2.attack(char1);
 					System.out.println( char2.characterName +  char2.attackPattern + char1.characterName);
 				} else {
-					System.out.println(char2.characterName + " tried to attacked but missed.");
+					System.out.println(char2.characterName + " tried to attack but missed.");
 				}
 			}
 			System.out.println("\n" + char1.characterName + " health: " + char1.health);

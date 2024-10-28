@@ -1,9 +1,9 @@
 package dungeonsAndDragons;
 
-public class Catalyst extends DnDCharacter {
+public class Claymore extends DnDCharacter {
 
-	protected Catalyst(String characterName) {
-		super(characterName, " casted spells to ", 100, 15);
+	protected Claymore(String characterName) {
+		super(characterName, " slashes ", 120, 5);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -29,5 +29,4 @@ public class Catalyst extends DnDCharacter {
 	public void buffAbility(int buff) {
 		super.buffAbility(buff);
 	}
-
 }

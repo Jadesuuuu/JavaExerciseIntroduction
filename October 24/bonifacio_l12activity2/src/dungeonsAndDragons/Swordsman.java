@@ -22,15 +22,11 @@ public class Swordsman extends DnDCharacter {
 	
 	@Override
 	public void restoreHealth(int restore) {
-		this.health += restore;
-		// cannot heal if already defeated
-		if(this.health < 0) {
-			this.health = 0;
-		}
+		super.restoreHealth(restore);
 	}
 
 	@Override
 	public void buffAbility(int buff) {
-		this.damage += buff;
+		super.buffAbility(buff);
 	}
 }
