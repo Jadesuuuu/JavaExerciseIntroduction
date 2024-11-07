@@ -1,4 +1,4 @@
-package bonifacio_L16Activity2;
+package bonifacio_L17Activity1;
 
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ public class Main {
 			
 			while (true) {
 				System.out.println("\n1. Add song to playlist\n2. Display playlist\n"
-						+ "3. Remove a song from playlist\n4. Play a song\n5. Exit");
+						+ "3. Remove a song from playlist\n4. Play a song\n5. Search artist\n6. Exit");
 				System.out.print("Enter your choice: ");
 				int choice = scanner.nextInt();
 				scanner.nextLine();
@@ -36,6 +36,10 @@ public class Main {
 					playlist.displayNextSong();
 					break;
 				case 5:
+					String searchArtist = scanner.nextLine();
+					playlist.searchSong(searchArtist);
+					break;
+				case 6:
 					System.out.println("Exiting playlist.");
 					System.exit(0);
 					default: System.out.println("Invalid choice. Please try again");
